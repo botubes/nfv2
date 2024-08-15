@@ -170,6 +170,12 @@ const onMessage = async (senderId, message) => {
           if (error) { botly.sendText({id: senderId, text: "حدث خطأ"}); }
           botly.sendText({id: senderId, text: "تم إلغاء العملية ✅"});
         });
+      } else if (message.message.text.includes("تم")) {
+        console.log(message);
+        botly.sendText({id: senderId, text: "✅"}, function (err, data) {
+          console.log("data :", data);
+          console.log("err :", err);
+        });
       } else {
         const user = await userDb(senderId);
         if (user[0]) {
