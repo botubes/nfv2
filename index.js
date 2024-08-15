@@ -8,7 +8,7 @@ const https = require("https");
 const botly = new Botly({
 	accessToken: process.env.PAGE_ACCESS_TOKEN,
 	notificationType: Botly.CONST.REGULAR,
-	FB_URL: "https://graph.facebook.com/v2.6/",
+	FB_URL: "https://graph.facebook.com/v20.0/",
 });
 
 const { createClient } = require("@supabase/supabase-js");
